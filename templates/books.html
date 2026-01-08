@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Books</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Available Books</h2>
+
+<table border="1" align="center">
+<tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Available Copies</th>
+    <th>Action</th>
+</tr>
+
+{% for book in books %}
+<tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.count }}</td>
+    <td>
+        {% if book.count > 0 %}
+            <a href="/issue/{{ loop.index0 }}">Issue</a>
+        {% else %}
+            <span>Not Available</span>
+        {% endif %}
+        |
+        <a href="/return/{{ loop.index0 }}">Return</a>
+    </td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Back to Role Selection</a>
+
+</body>
+</html>

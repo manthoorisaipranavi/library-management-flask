@@ -1,0 +1,38 @@
+body {
+    font-family: Arial;
+    background-color: #f4f6f8;
+    text-align: center;
+    padding: 30px;
+}
+
+h2, h3 {
+    color: #333;
+}
+
+form {
+    background: white;
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 6px 0;
+}
+
+button {
+    padding: 8px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+table {
+    background: white;
+    margin: auto;
+    padding: 10px;
+}

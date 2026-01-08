@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<h2>Admin – Add Book</h2>
+
+<form method="post">
+    <input name="title" placeholder="Book Title" required><br>
+    <input name="author" placeholder="Author Name" required><br>
+    <input name="count" type="number" min="1" placeholder="Number of Copies" required><br><br>
+    <button type="submit">Add Book</button>
+</form>
+
+<h3>Existing Books</h3>
+<table border="1" align="center">
+<tr>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Available Copies</th>
+</tr>
+{% for book in books %}
+<tr>
+    <td>{{ book.title }}</td>
+    <td>{{ book.author }}</td>
+    <td>{{ book.count }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<a href="/">Back to Role Selection</a>
+
+</body>
+</html>
